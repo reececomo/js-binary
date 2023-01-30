@@ -40,10 +40,10 @@ The first matching rule from the list bellow should be used. This means, for exa
 `111x xxxx  xxxx xxxx  xxxx xxxx  xxxx xxxx  xxxx xxxx  xxxx xxxx  xxxx xxxx  xxxx xxxx`
 * Any other value should be treated as an error
 
-### `float`
+### `float32`
 A 32-bit floating point, as spec'ed in IEEE 754
 
-### `double`
+### `float64`
 A 64-bit floating point, many times referred to as `double`, as spec'ed in IEEE 754
 
 ### string

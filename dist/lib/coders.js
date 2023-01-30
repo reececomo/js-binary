@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCoder = exports.dateCoder = exports.regexCoder = exports.oidCoder = exports.jsonCoder = exports.booleanCoder = exports.BufferCoder = exports.stringCoder = exports.floatCoder = exports.doubleCoder = exports.intCoder = exports.uintCoder = void 0;
+exports.getCoder = exports.dateCoder = exports.regexCoder = exports.oidCoder = exports.jsonCoder = exports.booleanCoder = exports.BufferCoder = exports.stringCoder = exports.float32Coder = exports.float64Coder = exports.intCoder = exports.uintCoder = void 0;
 const Schema_1 = require("./Schema");
 // Stores 2^i from i=0 to i=56
 const POW = (function () {
@@ -106,7 +106,7 @@ exports.intCoder = {
 /*
  * 64-bit double precision float
  */
-exports.doubleCoder = {
+exports.float64Coder = {
     write: function (f, data, path) {
         if (typeof f !== 'number') {
             throw new TypeError('Expected a number at ' + path + ', got ' + f);
@@ -120,7 +120,7 @@ exports.doubleCoder = {
 /*
  * 32-bit single precision float
  */
-exports.floatCoder = {
+exports.float32Coder = {
     write: function (f, data, path) {
         if (typeof f !== 'number') {
             throw new TypeError('Expected a number at ' + path + ', got ' + f);
@@ -248,8 +248,8 @@ function getCoder(type) {
     switch (type) {
         case Schema_1.CoderType.UINT: return exports.uintCoder;
         case Schema_1.CoderType.INT: return exports.intCoder;
-        case Schema_1.CoderType.FLOAT: return exports.floatCoder;
-        case Schema_1.CoderType.DOUBLE: return exports.doubleCoder;
+        case Schema_1.CoderType.FLOAT_32: return exports.float32Coder;
+        case Schema_1.CoderType.FLOAT_64: return exports.float64Coder;
         case Schema_1.CoderType.STRING: return exports.stringCoder;
         case Schema_1.CoderType.BUFFER: return exports.BufferCoder;
         case Schema_1.CoderType.BOOLEAN: return exports.booleanCoder;

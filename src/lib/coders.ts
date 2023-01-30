@@ -115,7 +115,7 @@ export const intCoder: BinaryCoder<number> = {
 /*
  * 64-bit double precision float
  */
-export const doubleCoder: BinaryCoder<number> = {
+export const float64Coder: BinaryCoder<number> = {
 	write: function (f, data, path) {
 		if (typeof f !== 'number') {
 			throw new TypeError('Expected a number at ' + path + ', got ' + f)
@@ -130,7 +130,7 @@ export const doubleCoder: BinaryCoder<number> = {
 /*
  * 32-bit single precision float
  */
-export const floatCoder: BinaryCoder<number> = {
+export const float32Coder: BinaryCoder<number> = {
 	write: function (f, data, path) {
 		if (typeof f !== 'number') {
 			throw new TypeError('Expected a number at ' + path + ', got ' + f)
@@ -270,8 +270,8 @@ export function getCoder(type: CoderType): BinaryCoder<any> {
 	switch (type) {
 		case CoderType.UINT: return uintCoder;
 		case CoderType.INT: return intCoder;
-		case CoderType.FLOAT: return floatCoder;
-		case CoderType.DOUBLE: return doubleCoder;
+		case CoderType.FLOAT_32: return float32Coder;
+		case CoderType.FLOAT_64: return float64Coder;
 		case CoderType.STRING: return stringCoder;
 		case CoderType.BUFFER: return BufferCoder;
 		case CoderType.BOOLEAN: return booleanCoder;

@@ -6,8 +6,8 @@ import { ReadState } from './ReadState';
 export enum CoderType {
 	UINT = 'uint',
 	INT = 'int',
-	FLOAT = 'float',
-	DOUBLE = 'double',
+	FLOAT_32 = 'float32',
+	FLOAT_64 = 'float64',
 	STRING = 'string',
 	BUFFER = 'Buffer',
 	BOOLEAN = 'boolean',
@@ -24,17 +24,6 @@ export type SchemaDefinition = CoderType | [CoderType] | Object | Object[];
 
 /**
  * Create a Schema, given a definition.
- *
- * The format can be either:
- * * A basic type, one of:
- *     `'uint', 'int', 'float', 'string', 'Buffer', 'boolean', 'json', 'oid', 'regex', 'date'`
- * * A compound type: an object, like:
- *     `{a: 'int', b: ['int'], c: [{'d?': 'string'}]}`
- * In the example above, 'b' is a an array of integers, 'd' is an optional field
- * * An array of values of the same type:
- *     `['int']`
- * @class
- * @param {string|Object|Array} type
  */
 export class Schema {
 	readonly type: CoderType;

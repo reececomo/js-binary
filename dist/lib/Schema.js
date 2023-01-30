@@ -32,8 +32,8 @@ var CoderType;
 (function (CoderType) {
     CoderType["UINT"] = "uint";
     CoderType["INT"] = "int";
-    CoderType["FLOAT"] = "float";
-    CoderType["DOUBLE"] = "double";
+    CoderType["FLOAT_32"] = "float32";
+    CoderType["FLOAT_64"] = "float64";
     CoderType["STRING"] = "string";
     CoderType["BUFFER"] = "Buffer";
     CoderType["BOOLEAN"] = "boolean";
@@ -46,17 +46,6 @@ var CoderType;
 })(CoderType = exports.CoderType || (exports.CoderType = {}));
 /**
  * Create a Schema, given a definition.
- *
- * The format can be either:
- * * A basic type, one of:
- *     `'uint', 'int', 'float', 'string', 'Buffer', 'boolean', 'json', 'oid', 'regex', 'date'`
- * * A compound type: an object, like:
- *     `{a: 'int', b: ['int'], c: [{'d?': 'string'}]}`
- * In the example above, 'b' is a an array of integers, 'd' is an optional field
- * * An array of values of the same type:
- *     `['int']`
- * @class
- * @param {string|Object|Array} type
  */
 class Schema {
     constructor(type) {

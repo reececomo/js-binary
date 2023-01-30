@@ -1,8 +1,8 @@
 # TypeScript Binary
 
-Based on [sitegui/js-binary](https://github.com/sitegui/js-binary).
+Fork of [sitegui/js-binary](https://github.com/sitegui/js-binary) updated to TypeScript, and with new types.
 
-Encode/decode to a custom binary format, much more compact and faster than JSON/BSON
+> Encode/decode to a custom binary format, much more compact and faster than JSON/BSON.
 
 ## Install
 `npm install typescript-binary`
@@ -50,8 +50,8 @@ const decoded = UserSchema.decode(encoded);
 ### Basic types
 * 'uint': unsigned integer (between 0 and 2^53)
 * 'int': signed integer (between -2^53 and 2^53)
-* 'float': a 32-bit floating-point
-* 'double': a 64-bit floating-point (the JavaScript `number` type)
+* 'float32': a 32-bit floating-point
+* 'float64': a 64-bit floating-point (the JavaScript `number` type)
 * 'string': a utf-8 string
 * 'Buffer': a Buffer instance
 * 'boolean': a boolean

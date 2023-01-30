@@ -8,8 +8,8 @@ export interface BinaryCoder<T> {
 }
 export declare const uintCoder: BinaryCoder<number>;
 export declare const intCoder: BinaryCoder<number>;
-export declare const doubleCoder: BinaryCoder<number>;
-export declare const floatCoder: BinaryCoder<number>;
+export declare const float64Coder: BinaryCoder<number>;
+export declare const float32Coder: BinaryCoder<number>;
 export declare const stringCoder: BinaryCoder<string>;
 export declare const BufferCoder: BinaryCoder<Buffer>;
 export declare const booleanCoder: BinaryCoder<boolean>;
