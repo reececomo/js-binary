@@ -81,6 +81,7 @@ Decode
 * 'uint': unsigned integer (between 0 and 2^53)
 * 'int': signed integer (between -2^53 and 2^53)
 * 'float': a 64-bit floating-point (the JavaScript number type)
+* 'float32': a 32-bit floating-point
 * 'string': a utf-8 string
 * 'Buffer': a Buffer instance
 * 'boolean': a boolean
